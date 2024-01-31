@@ -1,33 +1,43 @@
-import './App.css';
-import CarouselEffect from './Components/Carousel/Carousel';
-import Header from './Components/Header/Header';
+// import React from 'react';
+// import {  Routes, Route } from 'react-router-dom';
+// import Payment from './pages/Payment/Payment';
+// import SignIn from './pages/Auth/Signup';
+// import Order from './pages/Order/Order';
+// import Cart from './pages/Cart/Cart';
+// import Landing from './pages/Landing/Landing';
+
+// function App() {
+//   return (
+  
+//       <Routes>
+//         <Route path="/" element={<Landing />} />
+//         <Route path="/auth" element={<SignIn />} />
+//         <Route path="/payments" element={<Payment />} />
+//         <Route path="/orders" element={<Order />} />
+//         <Route path="/cart" element={<Cart />} />
+//       </Routes>
+  
+//   );
+// }
+
+// export default App;
+
+
+import React from 'react'
+import CarouselEffect from './Components/Carousel/Carousel'
+import Category from './Components/Category/Category'
+import Header from './Components/Header/Header'
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      < CarouselEffect/>
-    </div>
-  );
+      <div>
+          <Header/>
+          <CarouselEffect/>
+          <Category/>
+          
+      </div>
+
+
+  )
 }
-
-export default App;
-
-
-// npm i react react-dom @trendyol-js/react-carousel --save
-// import { SlLocationPin } from "react-icons/sl";
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { Carousel } from '@trendyol-js/react-carousel';
-// import { Item } from './yourItem';
-
-// ReactDOM.render(
-// 	<Carousel>
-// 		<Item />
-// 		<Item />
-// 		<Item />
-// 		<Item />
-// 	</Carousel>,
-// 	document.getElementById('root'),
-// );
+export default App
