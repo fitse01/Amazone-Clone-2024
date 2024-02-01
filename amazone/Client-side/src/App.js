@@ -23,21 +23,33 @@
 // export default App;
 
 
+// import React from 'react'
+// import CarouselEffect from './Components/Carousel/Carousel'
+// import Category from './Components/Category/Category'
+// import Header from './Components/Header/Header'
+
+// function App() {
+//   return (
+//       <div>
+//           {/* <Header/>
+//           <CarouselEffect/>
+//           <Category/> */}
+          
+//       </div>
+
+
+//   )
+// }
+// export default App
 import React from 'react'
-import CarouselEffect from './Components/Carousel/Carousel'
-import Category from './Components/Category/Category'
-import Header from './Components/Header/Header'
+import Routing from "./Router"
 
 function App() {
   return (
-      <div>
-          <Header/>
-          <CarouselEffect/>
-          <Category/>
-          
-      </div>
-
-
+    <div>
+      <Routing/>
+    </div>
   )
 }
+
 export default App
