@@ -1,9 +1,6 @@
-import React from 'react'
-
-function action.type() {
-  return (
-    <div>action.type</div>
-  )
-}
-
-export default action.type
+export const Type = {
+  ADD_TO_BASKET: "ADD_TO_BASKET",
+  REMOVE_FROM_BASKET: "REMOVE_FROM_BASKET",
+  EMPTY_BASKET: "EMPTY_BASKET",
+  SET_USER: "SET_USER",
+  };

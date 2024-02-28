@@ -1,8 +1,8 @@
 import React, { useContext }  from 'react'
-import Rating from '@mui/lab/Rating';
+import Rating from '@mui/lab/Rating/Rating';
 
 import CurrencyFormat from '../CurrencyFormat/CurrencyFormat'
-import classes from './Products.module.css'
+import classes from './Product.module.css'
 import {Link} from 'react-router-dom'
 import { DataContext } from '../DataProvider/DataProvider'
 import {Type} from '../../Utility/action.type'
@@ -11,7 +11,7 @@ function ProductCard({product, flex, renderDesc, renderAdd}) {
     const { image, title, id, rating, price, description } = product;
     // console.log(product)
 
-        const [state, dispatch]=useContext(DataContext)
+    const [state, dispatch]=useContext(DataContext)
         // console.log(DataContext)
         // console.log(state)
 
@@ -63,3 +63,17 @@ return (
 }
 
 export default ProductCard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
