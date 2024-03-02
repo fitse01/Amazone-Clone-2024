@@ -7,9 +7,10 @@ import LayOut from '../../Components/LayOut/LayOut'
 function Landing() {
 return (
     <LayOut>
-        <Carousel/>
-        <Category/>
+       {/**/} <Carousel/>
+          <Category/>
         <Product/>
+        
     </LayOut>
 )
 }

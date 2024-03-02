@@ -10,6 +10,7 @@ import { DataContext } from "../DataProvider/DataProvider";
 
 function Header() {
   const [{ basket }, dispatch] = useContext(DataContext);
+  console.log(basket)
   return (
     <section className={classes.fixed}>
       <section>
@@ -63,7 +64,8 @@ function Header() {
             </Link>
             <Link to="/cart" className={classes.cart}>
               <BiCart size={35} />
-              <span>{basket.legth}</span>
+              {/* <span>{basket.legth}</span> */}
+              <span>{basket.length}</span>
             </Link>
           </div>
         </div>

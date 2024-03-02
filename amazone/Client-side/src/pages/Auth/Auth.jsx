@@ -20,6 +20,7 @@ function Auth() {
   });
 
   const [{ user }, dispatch] = useContext(DataContext);
+  console.log(user)
   const navigate = useNavigate();
   const navStateData = useLocation();
   console.log(navStateData);
