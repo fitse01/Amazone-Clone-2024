@@ -1,55 +1,38 @@
-// import React from 'react';
-// import {  Routes, Route } from 'react-router-dom';
-// import Payment from './pages/Payment/Payment';
-// import SignIn from './pages/Auth/Signup';
-// import Order from './pages/Order/Order';
-// import Cart from './pages/Cart/Cart';
-// import Landing from './pages/Landing/Landing';
-
-// function App() {
-//   return (
-  
-//       <Routes>
-//         <Route path="/" element={<Landing />} />
-//         <Route path="/auth" element={<SignIn />} />
-//         <Route path="/payments" element={<Payment />} />
-//         <Route path="/orders" element={<Order />} />
-//         <Route path="/cart" element={<Cart />} />
-//       </Routes>
-  
-//   );
-// }
-
-// export default App;
-
-
 // import React from 'react'
-// import CarouselEffect from './Components/Carousel/Carousel'
-// import Category from './Components/Category/Category'
-// import Header from './Components/Header/Header'
+// import Routing from "./Router"
 
 // function App() {
 //   return (
-//       <div>
-//           {/* <Header/>
-//           <CarouselEffect/>
-//           <Category/> */}
-          
-//       </div>
-
-
+//     <div>
+//       <Routing/>
+//     </div>
 //   )
 // }
+
 // export default App
-import React from 'react'
-import Routing from "./Router"
+import { useEffect, useState, useContext } from "react";
+import Routing from "./Router.jsx";
+import { auth } from "./Utility/firebase.js";
+import { DataContext } from "./Components/DataProvider/DataProvider.jsx";
+import { Type } from "./Utility/action.type.js";
 
 function App() {
-  return (
-    <div>
-      <Routing/>
-    </div>
-  )
+  const [{ user }, dispatch] = useContext(DataContext);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        console.log(authUser);
+        dispatch({
+          type: Type.SET_USER,
+          user: authUser,
+        });
+      } else {
+        dispatch({ type: Type.SET_USER, user: null });
+      }
+    });
+  }, []);
+  return <Routing />;
 }
 
-export default App
+export default App;

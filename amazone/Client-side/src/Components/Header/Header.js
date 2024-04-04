@@ -7,10 +7,11 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../Utility/firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useContext(DataContext);
-  console.log(basket)
+  const [{ user, basket }, dispatch] = useContext(DataContext);
+  console.log(basket);
   return (
     <section className={classes.fixed}>
       <section>
@@ -40,7 +41,7 @@ function Header() {
               <option value="">All</option>
             </select>
             <input type="text" placeholder="Search Amazon" />
-            <BsSearch size={25} />
+            <BsSearch size={39} />
           </div>
           {/* other section */}
           <div className={classes.order__container}>
@@ -54,9 +55,20 @@ function Header() {
                 <option value="">EN</option>
               </select>
             </Link>
-            <Link to="/signin">
-              <p>Sign In</p>
-              <span>Account & Lists</span>
+            <Link to={!user && "/signin"}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello {user?.email?.split("@")[0]}</p>
+                    <span onClick={()=>auth.signOut()}>Sign out</span>
+                  </>
+                ) : (
+                  <>
+                    <p>Hello ,Sign In</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
+              </div>
             </Link>
             <Link to="/orders">
               <p>returns</p>

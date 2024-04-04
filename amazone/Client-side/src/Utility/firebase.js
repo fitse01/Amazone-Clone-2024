@@ -1,4 +1,3 @@
-
 import firebase from "firebase/compat/app";
 // auth
 import { getAuth } from "firebase/auth";
