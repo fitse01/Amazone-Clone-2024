@@ -5,6 +5,8 @@
     color: black;
     text-decoration: none;
     position: relative;
+    margin: auto;
+
     }
     .card__container img {
         padding: 10px;
