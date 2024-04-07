@@ -127,7 +127,7 @@ function Payment() {
                 <div className={classes.payment__price}>
                   <div>
                     <span style={{ display: "flex", gap: "10px" }}>
-                      <p>Total Order |</p> <CurrencyFormat amount={total} />
+                      <p>Total Order |</p> <CurrencyFormat amount={total*100} />
                     </span>
                   </div>
                   <button type="submit">
