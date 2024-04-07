@@ -605,3 +605,53 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
 [error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification"}}
 [debug] [2024-04-07T18:07:25.096Z] File C:\Users\fitse\Desktop\evangadi\phase 4\AmazonClone\Amazone-Clone-2024\amazone\Client-side\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\fitse\\Desktop\\evangadi\\phase 4\\AmazonClone\\Amazone-Clone-2024\\amazone\\Client-side\\functions\\index.js changed, reloading triggers"}}
+[debug] [2024-04-07T18:07:26.103Z] Validating nodejs source
+[debug] [2024-04-07T18:07:28.647Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "stripe": "^14.23.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-04-07T18:07:28.648Z] Building nodejs source
+[debug] [2024-04-07T18:07:28.648Z] Failed to find version of module node: reached end of search path C:\Users\fitse\Desktop\evangadi\phase 4\AmazonClone\Amazone-Clone-2024\amazone\Client-side\functions\node_modules
+[info] +  functions: Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-04-07T18:07:28.652Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-04-07T18:07:28.663Z] Found firebase-functions binary at 'C:\Users\fitse\Desktop\evangadi\phase 4\AmazonClone\Amazone-Clone-2024\amazone\Client-side\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8749
+
+[error] ReferenceError: setGlobalOptions is not defined
+    at Object.<anonymous> (C:\Users\fitse\Desktop\evangadi\phase 4\AmazonClone\Amazone-Clone-2024\amazone\Client-side\functions\index.js:11:1)
+    at Module._compile (node:internal/modules/cjs/loader:1376:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+    at Module.load (node:internal/modules/cjs/loader:1207:32)
+    at Module._load (node:internal/modules/cjs/loader:1023:12)
+    at Module.require (node:internal/modules/cjs/loader:1235:19)
+    at require (node:internal/modules/helpers:176:18)
+    at loadModule (C:\Users\fitse\Desktop\evangadi\phase 4\AmazonClone\Amazone-Clone-2024\amazone\Client-side\functions\node_modules\firebase-functions\lib\runtime\loader.js:40:16)
+    at loadStack (C:\Users\fitse\Desktop\evangadi\phase 4\AmazonClone\Amazone-Clone-2024\amazone\Client-side\functions\node_modules\firebase-functions\lib\runtime\loader.js:93:23)
+    at C:\Users\fitse\Desktop\evangadi\phase 4\AmazonClone\Amazone-Clone-2024\amazone\Client-side\functions\node_modules\firebase-functions\lib\bin\firebase-functions.js:56:56
+
+[debug] [2024-04-07T18:07:29.752Z] Got response code 400; body Failed to generate manifest from function source: ReferenceError: setGlobalOptions is not defined
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
