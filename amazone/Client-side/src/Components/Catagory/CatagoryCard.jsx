@@ -8,9 +8,9 @@ function CategoryCard({data}) {
 
       <Link to={`/category/${data.name}`}>
         <span>
-          <h2>{data.title}</h2>
+          <h2>{data?.title}</h2>
         </span>
-        <img src={data.imageLink} alt="" />
+        <img src={data?.imageLink} alt="" />
         <p>shop now</p>
       </Link>
     </div>
